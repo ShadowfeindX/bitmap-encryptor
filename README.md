@@ -35,12 +35,12 @@ I'm planning to port this over to JRuby to get the use of real threads/fibers so
 to use the future releases of this you may want to install JRuby or at least the JRE.
 
 #Example Images
-[img1_o]:
-[img2_o]:
-[img2_o]:
-[img2_o]:
-[img2_o]:
-[img2_o]:
+[img1_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1.bmp "Test Image 1 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2.bmp "Test Image 2 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3.bmp "Test Image 3 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4.bmp "Test Image 4 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5.bmp "Test Image 5 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6.bmp "Test Image 6 (Original)"
 
 [img1_e]:
 [img2_e]:
