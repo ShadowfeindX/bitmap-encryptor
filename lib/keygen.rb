@@ -15,18 +15,18 @@ module KEYGEN
 	end
 	def make_key
 		key_params
-		key = ""
-		key = key + @params[0][rand(0...4)]
-		key = key + @params[1][rand(0...5)]
-		key = key + @params[2]
-		key = key + @params[3][rand(0...6)]
-		key = key + @params[4][rand(0...3)]
-		key = key + @params[5]
-		key = key + @params[6][rand(0...8)]
-		key = key + @params[7][rand(0...2)]
-		key = key + @params[8]
-		key = key + @params[9][rand(0...7)]
-		key = key + @params[10][rand(0...9)]
+		key = String.new
+		key += @params[0][rand(0...4)]
+		key += @params[1][rand(0...5)]
+		key += @params[2]
+		key += @params[3][rand(0...6)]
+		key += @params[4][rand(0...3)]
+		key += @params[5]
+		key += @params[6][rand(0...8)]
+		key += @params[7][rand(0...2)]
+		key += @params[8]
+		key += @params[9][rand(0...7)]
+		key += @params[10][rand(0...9)]
 		puts key
 	end
 	def check_key(key)
