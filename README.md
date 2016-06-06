@@ -25,7 +25,7 @@ Not only does the Cryptomatic allow you to protect whatever images you may have,
 and without exposing any unnecessary security flaws. PLUS, the images it generates look pretty cool too!
 
 #Usage Info
-*Disclaimer*: Currently still in beta! Not packaged for release!
+*Disclaimer*: Currently only supports bitmap images! Not packaged for release!
 The project is still runnable, just currently optimizing some things and cleaning spaghetti code.
 
 If you have a version of Ruby installed you can download the source and run it with
@@ -34,7 +34,31 @@ You can also run the main script directly from the bin folder but that may cause
 I'm planning to port this over to JRuby to get the use of real threads/fibers so if you want
 to use the future releases of this you may want to install JRuby or at least the JRE.
 
-##Coming Soon: The Cryptomatic 9001!
+#Example Images
+[img1_o]:
+[img2_o]:
+[img2_o]:
+[img2_o]:
+[img2_o]:
+[img2_o]:
+
+[img1_e]:
+[img2_e]:
+[img2_e]:
+[img2_e]:
+[img2_e]:
+[img2_e]:
+
+| Original          | Encrypted         |
+|:-----------------:|:-----------------:|
+|![alt text][img1_o]|![alt text][img1_e]|
+|![alt text][img2_o]|![alt text][img2_e]|
+|![alt text][img3_o]|![alt text][img3_e]|
+|![alt text][img4_o]|![alt text][img4_e]|
+|![alt text][img5_o]|![alt text][img5_e]|
+|![alt text][img6_o]|![alt text][img6_e]|
+
+#Coming Soon: The Cryptomatic 9001!
 It's the same thing...but over 9000!
 
 Oh, it also adds audio file encryption.
