@@ -46,10 +46,10 @@ to use the future releases of this you may want to install JRuby or at least the
 
 [img1_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1_enc.bmp "Test Image 1 (Encrypted)"
 [img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2_enc.bmp "Test Image 2 (Encrypted)"
-[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3_enc.bmp "Test Image 3 (Encrypted)"
-[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4_enc.bmp "Test Image 4 (Encrypted)"
-[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5_enc.bmp "Test Image 5 (Encrypted)"
-[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6_enc.bmp "Test Image 6 (Encrypted)"
+[img3_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3_enc.bmp "Test Image 3 (Encrypted)"
+[img4_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4_enc.bmp "Test Image 4 (Encrypted)"
+[img5_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5_enc.bmp "Test Image 5 (Encrypted)"
+[img6_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6_enc.bmp "Test Image 6 (Encrypted)"
 
 | Original          | Encrypted         |
 |:-----------------:|:-----------------:|
