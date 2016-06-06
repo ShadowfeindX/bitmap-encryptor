@@ -7,6 +7,7 @@ class UI
 
     def initialize(scene)
         system 'clear'
+        system 'cls'
         print scene
         start
     end
@@ -89,7 +90,8 @@ class UI
     end
 	
     at_exit do
-        system('clear')
+        system 'clear'
+        system 'cls'
         puts "Thanks for using the Cryptomatic 9000!"
     end
 end

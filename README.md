@@ -24,8 +24,19 @@ for the same reasons.
 Not only does the Cryptomatic allow you to protect whatever images you may have, but it does so without any lossy features, like compression,
 and without exposing any unnecessary security flaws. PLUS, the images it generates look pretty cool too!
 
+#Usage Info
+*Disclaimer*: Currently still in beta! Not packaged for release!
+The project is still runnable, just currently optimizing some things and cleaning spaghetti code.
+
+If you have a version of Ruby installed you can download the source and run it with
+`rake` or `rake start`  
+You can also run the main script directly from the bin folder but that may cause some issues.
+I'm planning to port this over to JRuby to get the use of real threads/fibers so if you want
+to use the future releases of this you may want to install JRuby or at least the JRE.
 
 ##Coming Soon: The Cryptomatic 9001!
 It's the same thing...but over 9000!
 
-Oh, it also adds audio file encryption, did I mention that?
+Oh, it also adds audio file encryption.
+
+And multi-threading, did I mention that?
