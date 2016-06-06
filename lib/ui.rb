@@ -30,7 +30,7 @@ class UI
             when '1'
                 #~ gets filename and key from user
                 print "Please enter filename: "
-                filename = gets.chomp
+                filename = check_ext(gets.chomp)
                 print "Please enter CryptoKey: "
                 key = gets.chomp
                 
@@ -40,14 +40,14 @@ class UI
                 
                 #~ creates new encrypted image
                 print "Processing data...."
-                image = BMP::Encrypt.new check_ext(filename)
+                image = BMP::Encrypt.new filename
                 
                 #~ sends image information to be saved
-                save [image.export, 1, filename]		
+                save [image.export, 1, filename[0...filename.length-4]]		
             when '2'
                 #~ gets filename and key from user
                 print "Please enter filename: "
-                filename = gets.chomp
+                filename = check_ext(gets.chomp)
                 print "Please enter CryptoKey: "
                 key = gets.chomp
                 
@@ -57,10 +57,10 @@ class UI
                 
                 #~ creates decrypted image from keyfile
                 print "Processing data...."
-                image = BMP::Decrypt.new(check_ext(filename))
+                image = BMP::Decrypt.new filename
                 
                 #~ send image information to be saved
-                save [image.export,2,filename]
+                save [image.export,2,filename[0...filename.length-4]]
             when 'A','a'
                 #~ generates a key from the KEYGEN module
                 make_key
@@ -79,9 +79,9 @@ class UI
         print "saving image....."
         case image[1]
             when 1
-                image[0].save_as("#{image[2]}_encrypted.bmp")
+                image[0].save_as("#{image[2]}_enc.bmp")
             when 2
-                image[0].save_as("#{image[2]}_decrypted.bmp")
+                image[0].save_as("#{image[2]}_dec.bmp")
         else
             puts "error!"
             return nil

@@ -5,8 +5,10 @@ but you were afraid of it falling into the wrong hands?
 ###Introducing the Cryptomatic 9000!
 This ingenious piece of software will tear up your picture and re-arrange it into an entirely new image!
 And this isn't simple shredding either. The Cryptomatic 9000 will split your image at the molecular level
-into MILLIONS of pixels before regrouping them in a completely RANDOM order, making it impossible for onlookers
-to even attempt to identify even the original colors, much less the image itself. Behold the 3 S's of the Cryptomatic!
+into MILLIONS of pixels before regrouping them in a completely RANDOM order! Not only that, but it also recalculates
+a new RGB(hex) value for each pixel it scans, making it impossible for onlookers to even attempt to identify even the
+original colors, much less the image itself.  
+Behold the 3 S's of the Cryptomatic!
 
 ###Secure!
 Normal encryption programs provide you with a master key that will allow you to decrypt any images encrypted with that key,
@@ -18,7 +20,7 @@ the key is also an image (a very very tiny image) so you won't have to remember 
 ###Safe!
 In order to start the encryption process, you must first input your own cryptokey and the name of the file you wish to encrypt.
 This prevents you from accidentally encrypting the wrong image! Batch encrypting/decrypting is also not currently implemented
-for the same reasons.
+for the same reasons, however, you can encrypt images back to back. The program doesn't exit until you tell it to.
 
 ###Super Cool!
 Not only does the Cryptomatic allow you to protect whatever images you may have, but it does so without any lossy features, like compression,
@@ -37,17 +39,17 @@ to use the future releases of this you may want to install JRuby or at least the
 #Example Images
 [img1_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1.bmp "Test Image 1 (Original)"
 [img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2.bmp "Test Image 2 (Original)"
-[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3.bmp "Test Image 3 (Original)"
-[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4.bmp "Test Image 4 (Original)"
-[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5.bmp "Test Image 5 (Original)"
-[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6.bmp "Test Image 6 (Original)"
+[img3_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3.bmp "Test Image 3 (Original)"
+[img4_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4.bmp "Test Image 4 (Original)"
+[img5_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5.bmp "Test Image 5 (Original)"
+[img6_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6.bmp "Test Image 6 (Original)"
 
-[img1_e]:
-[img2_e]:
-[img2_e]:
-[img2_e]:
-[img2_e]:
-[img2_e]:
+[img1_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1_enc.bmp "Test Image 1 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2_enc.bmp "Test Image 2 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3_enc.bmp "Test Image 3 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4_enc.bmp "Test Image 4 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5_enc.bmp "Test Image 5 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6_enc.bmp "Test Image 6 (Encrypted)"
 
 | Original          | Encrypted         |
 |:-----------------:|:-----------------:|
