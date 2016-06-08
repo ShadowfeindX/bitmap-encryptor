@@ -28,7 +28,16 @@
 
     <div class="container">
       <section id="main_content">
-        <p>Have you ever had an image that you wanted to offload to an external drive or upload to the cloud,
+        <h2>
+<a id="updates" class="anchor" href="#updates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Updates</h2>
+
+<ul>
+<li>Command line usage added</li>
+<li>File processing heavily optimized</li>
+<li>Multi-threading for simultaneous decrypting and encrypting</li>
+</ul>
+
+<p>Have you ever had an image that you wanted to offload to an external drive or upload to the cloud,
 but you were afraid of it falling into the wrong hands?</p>
 
 <h1>
@@ -56,8 +65,7 @@ the key is also an image (a very very tiny image) so you won't have to remember 
 <a id="safe" class="anchor" href="#safe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Safe!</h2>
 
 <p>In order to start the encryption process, you must first input your own cryptokey and the name of the file you wish to encrypt.
-This prevents you from accidentally encrypting the wrong image! Batch encrypting/decrypting is also not currently implemented
-for the same reasons, however, you can encrypt images back to back. The program doesn't exit until you tell it to.</p>
+This prevents you from accidentally encrypting the wrong image!</p>
 
 <h2>
 <a id="super-cool" class="anchor" href="#super-cool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Super Cool!</h2>
@@ -68,14 +76,12 @@ and without exposing any unnecessary security flaws. PLUS, the images it generat
 <h1>
 <a id="usage-info" class="anchor" href="#usage-info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Info</h1>
 
-<p><em>Disclaimer:</em> Currently only supports bitmap images! Not packaged for release!
-The project is still runnable, just currently optimizing some things and cleaning spaghetti code.</p>
+<p><em>Disclaimer</em>: Currently only supports bitmap images! Not packaged for release!</p>
 
-<p>If you have a version of Ruby installed you can download the source and run it with
-<code>rake</code> or <code>rake start</code><br>
-You can also run the main script directly from the bin folder but that may cause some issues.
-I'm planning to port this over to JRuby to get the use of real threads/fibers so if you want
-to use the future releases of this you may want to install JRuby or at least the JRE.</p>
+<p>If you have a version of Ruby installed you can download the source and run it with <code>rake</code> or <code>rake start</code><br>
+You can also run the main script directly using <code>ruby bin/main</code> from the project folder.<br>
+You can also use the script as a command line tool!<br>
+Run <code>ruby bin/main -h</code> for more usage info.</p>
 
 <h1>
 <a id="example-images" class="anchor" href="#example-images" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Images</h1>
@@ -89,28 +95,28 @@ to use the future releases of this you may want to install JRuby or at least the
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1.bmp" alt="alt text" title="Test Image 1 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1_enc.bmp" alt="alt text" title="Test Image 1 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img1.bmp" alt="alt text" title="Test Image 1 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img1_enc.bmp" alt="alt text" title="Test Image 1 (Encrypted)"></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2.bmp" alt="alt text" title="Test Image 2 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2_enc.bmp" alt="alt text" title="Test Image 2 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img2.bmp" alt="alt text" title="Test Image 2 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img2_enc.bmp" alt="alt text" title="Test Image 2 (Encrypted)"></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3.bmp" alt="alt text" title="Test Image 3 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3_enc.bmp" alt="alt text" title="Test Image 3 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img3.bmp" alt="alt text" title="Test Image 3 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img3_enc.bmp" alt="alt text" title="Test Image 3 (Encrypted)"></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4.bmp" alt="alt text" title="Test Image 4 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4_enc.bmp" alt="alt text" title="Test Image 4 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img4.bmp" alt="alt text" title="Test Image 4 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img4_enc.bmp" alt="alt text" title="Test Image 4 (Encrypted)"></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5.bmp" alt="alt text" title="Test Image 5 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5_enc.bmp" alt="alt text" title="Test Image 5 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img5.bmp" alt="alt text" title="Test Image 5 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img5_enc.bmp" alt="alt text" title="Test Image 5 (Encrypted)"></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6.bmp" alt="alt text" title="Test Image 6 (Original)"></td>
-<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6_enc.bmp" alt="alt text" title="Test Image 6 (Encrypted)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img6.bmp" alt="alt text" title="Test Image 6 (Original)"></td>
+<td align="center"><img src="https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img6_enc.bmp" alt="alt text" title="Test Image 6 (Encrypted)"></td>
 </tr>
 </tbody>
 </table>
