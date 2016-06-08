@@ -8,7 +8,6 @@ class UI
     alias _X exit
     
     def initialize(scene)
-        system 'clear';system 'cls'
         print scene
         start_keygen
         loop do

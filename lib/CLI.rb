@@ -7,14 +7,9 @@ class CLI
     alias k make_key
     
     def initialize(*args)
-        #*args = ARGV
         start_keygen
         cmd, @key, *@files = ARGV
-        #puts @files
-        #puts @files.rindex('_enc') == @files.size-4
         send :"#{cmd[1]}" #rescue puts "Invalid argument!"
-        #puts key
-        #puts files
     end
     
     def h
@@ -30,51 +25,34 @@ class CLI
     
     def b
         return nil unless check_key(@key)
+        dec = @files.select{|f| f.rindex('_enc') == f.size-4}
+        enc = @files - dec
         
-#puts @files[1] #=== String.new
-        
-        #case @files
-        #when Array
-        #dec = @files.select{|f| f.index('_enc') == f.size-4}
-        #puts dec
-        
-        #enc = (@files - dec)
-        #puts enc
-        
-        
-        
-        #puts dec.empty?
-        
-            if !(dec = @files.select{|f| f.rindex('_enc') == f.size-4}).empty?
+        *threads = Thread.new do
+            unless dec.empty?
                 dec.map.with_index do |f, i|
                     f = BMP::Decrypt.new f[0...f.size-4]
                     f.parse; f.decrypt; f.export
-                    print "#{i+1} of #{dec.size} files decrypted! "
+                    puts "#{i+1} of #{dec.size} files decrypted! "
                 end
-            elsif !(enc = @files - dec).empty?
-                #puts @files
+            else
+                puts "No decryptable files found!"
+            end
+        end
+        
+        threads << Thread.new do
+            unless enc.empty?
                 enc.map.with_index do |f, i|
                     f = BMP::Encrypt.new f
                     f.encrypt; f.map; f.export
                     puts "#{i+1} of #{enc.size} files encrypted!"
                 end
-            else
-                puts "Filenames not recognized!"
+            else 
+                puts "No encryptable files found!"
             end
-        #when String
-        #    f = @files
-        #    if f.rindex('_enc') == f.size-4
-        #        f = BMP::Decrypt.new f[0...f.size-4]
-        #        f.parse; f.decrypt; f.export
-        #        print "1 file decrypted! "
-        #    else
-        #        f = BMP::Encrypt.new f
-        #        f.encrypt; f.map; f.export
-        #        puts "1 file encrypted!"
-        #    end
-        #else
-        #    puts @files.class
-        #end
+        end
+        
+        threads.map {|thr| thr.join}
     end
     
     def w

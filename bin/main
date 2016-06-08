@@ -2,7 +2,7 @@ $LOAD_PATH << 'lib'
 require "UI"
 require "CLI"
 
-CLI.new if ARGV.first
+CLI.new unless ARGV.empty?
 
 UI.new """
 #############################################################################################
@@ -23,9 +23,8 @@ UI.new """
 ##### 2: Decrypt Image #####                              ##### B: Batch Decrypt Images #####
 
 #############################################################################################
-\n\n""" unless ARGV.first
+\n\n""" if ARGV.empty?
 
 at_exit do
-    #system 'clear'; system 'cls'
     puts "Thanks for using the Cryptomatic 9000!"
 end

@@ -2,7 +2,7 @@ module BMP
     class Encrypt
         def initialize(filename)
             @file = filename
-            @original = Read.new "tests/#{filename}.bmp"
+            @original = Read.new "data/#{filename}.bmp"
             @matrix = Array.new( @original.width, Array.new(@original.height) )
             @encrypted = Write.new @original.width, @original.height
 
@@ -19,7 +19,7 @@ module BMP
         end
 	
         def map
-            File.open("tests/#{@file}_key.bmp","wb") do |file|
+            File.open("data/#{@file}_key.bmp","wb") do |file|
                 @rows.each do |x|
                     _ = (x == @rows.last ? ']' : '|')
                     file << x << _
@@ -32,7 +32,7 @@ module BMP
         end
         
         def export
-            @encrypted.save_as "tests/#{@file}_enc.bmp"
+            @encrypted.save_as "data/#{@file}_enc.bmp"
         end
     end
 end

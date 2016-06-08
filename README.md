@@ -1,6 +1,7 @@
 ##Updates
 - [x] Command line usage added
 - [x] File processing heavily optimized
+- [x] Multi-threading for simultaneous decrypting and encrypting
 
 #The Cryptomatic 9000!
 Have you ever had an image that you wanted to offload to an external drive or upload to the cloud,
@@ -37,19 +38,19 @@ You can also run the main script directly using `ruby bin/main` from the project
 You can also use the script as a command line tool! Run `ruby bin/main -h` for more usage info.
 
 #Example Images
-[img1_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1.bmp "Test Image 1 (Original)"
-[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2.bmp "Test Image 2 (Original)"
-[img3_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3.bmp "Test Image 3 (Original)"
-[img4_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4.bmp "Test Image 4 (Original)"
-[img5_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5.bmp "Test Image 5 (Original)"
-[img6_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6.bmp "Test Image 6 (Original)"
+[img1_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img1.bmp "Test Image 1 (Original)"
+[img2_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img2.bmp "Test Image 2 (Original)"
+[img3_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img3.bmp "Test Image 3 (Original)"
+[img4_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img4.bmp "Test Image 4 (Original)"
+[img5_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img5.bmp "Test Image 5 (Original)"
+[img6_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img6.bmp "Test Image 6 (Original)"
 
-[img1_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1_enc.bmp "Test Image 1 (Encrypted)"
-[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img2_enc.bmp "Test Image 2 (Encrypted)"
-[img3_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img3_enc.bmp "Test Image 3 (Encrypted)"
-[img4_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img4_enc.bmp "Test Image 4 (Encrypted)"
-[img5_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img5_enc.bmp "Test Image 5 (Encrypted)"
-[img6_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img6_enc.bmp "Test Image 6 (Encrypted)"
+[img1_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img1_enc.bmp "Test Image 1 (Encrypted)"
+[img2_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img2_enc.bmp "Test Image 2 (Encrypted)"
+[img3_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img3_enc.bmp "Test Image 3 (Encrypted)"
+[img4_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img4_enc.bmp "Test Image 4 (Encrypted)"
+[img5_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img5_enc.bmp "Test Image 5 (Encrypted)"
+[img6_e]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/data/img6_enc.bmp "Test Image 6 (Encrypted)"
 
 | Original          | Encrypted         |
 |:-----------------:|:-----------------:|
