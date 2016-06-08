@@ -4,15 +4,17 @@ module BMP
     BITS_PER_PIXEL     = 24
     DIB_HEADER_SIZE    = 40
 
-    def initialize(bmp_filename) 
-      File.open(bmp_filename, "rb") do |file|
-        read_bmp_header(file)
-        read_dib_header(file)
-        read_pixels(file)
-      end
+    def initialize(bmp_filename)
+      file = File.open(bmp_filename, "rb") #do |file|
+      contents = file.read; file.close
+      file = StringIO.new(contents)
+          read_bmp_header(file)
+          read_dib_header(file)
+          read_pixels(file)
+      contents.clear
     end
     def [](x,y)
-      @pixels[y][x]
+      @pixels[y][x].to_s
     end
 
     attr_reader :width, :height
@@ -22,7 +24,7 @@ module BMP
 
       (@height-1).downto(0) do |y|
         0.upto(@width - 1) do |x|
-          @pixels[y][x] = file.read(3).unpack("H6").first
+          @pixels[y][x] = file.read(3).unpack("H6").first.to_sym
         end
         advance_to_next_row(file)
       end

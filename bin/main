@@ -1,5 +1,8 @@
 $LOAD_PATH << 'lib'
-require "ui"
+require "UI"
+require "CLI"
+
+CLI.new if ARGV.first
 
 UI.new """
 #############################################################################################
@@ -8,11 +11,21 @@ UI.new """
 ####################################  CRYPTOMATIC 9000!  ####################################
 #############################################################################################
 
-#############################################################################################
-
-##### 1: Encrypt Image #####                              ###### A: Generate Cryptokey ######
-
-##### 2: Decrypt Image #####                              ############# X: Exit #############
+#  Warning!: Do NOT enter extensions such as .bmp, _enc, _dec, _encrypted, _decrypted, etc. #
+#       Warning!: Enter filenames seperated by spaces and without special characters.       #
 
 #############################################################################################
-\n\n"""
+
+###### 0: Run Keygen #######                              ############# X: Exit #############
+
+##### 1: Encrypt Image #####                              ##### A: Batch Encrypt Images #####
+                                                          
+##### 2: Decrypt Image #####                              ##### B: Batch Decrypt Images #####
+
+#############################################################################################
+\n\n""" unless ARGV.first
+
+at_exit do
+    #system 'clear'; system 'cls'
+    puts "Thanks for using the Cryptomatic 9000!"
+end

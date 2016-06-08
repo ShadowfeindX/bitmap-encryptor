@@ -46,7 +46,7 @@ module BMP
     def write_pixel_array(file)
       @pixels.reverse_each do |row|
         row.each do |color|
-          file << pixel_binstring(color)
+          file << pixel_binstring(color.to_s)
         end
 
         file << row_padding

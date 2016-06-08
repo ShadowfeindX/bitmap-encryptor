@@ -1,3 +1,7 @@
+##Updates
+- [x] Command line usage added
+- [x] File processing heavily optimized
+
 #Cryptomatic 9000!
 Have you ever had an image that you wanted to offload to an external drive or upload to the cloud,
 but you were afraid of it falling into the wrong hands?
@@ -19,8 +23,7 @@ the key is also an image (a very very tiny image) so you won't have to remember 
 
 ###Safe!
 In order to start the encryption process, you must first input your own cryptokey and the name of the file you wish to encrypt.
-This prevents you from accidentally encrypting the wrong image! Batch encrypting/decrypting is also not currently implemented
-for the same reasons, however, you can encrypt images back to back. The program doesn't exit until you tell it to.
+This prevents you from accidentally encrypting the wrong image!
 
 ###Super Cool!
 Not only does the Cryptomatic allow you to protect whatever images you may have, but it does so without any lossy features, like compression,
@@ -28,13 +31,10 @@ and without exposing any unnecessary security flaws. PLUS, the images it generat
 
 #Usage Info
 *Disclaimer*: Currently only supports bitmap images! Not packaged for release!
-The project is still runnable, just currently optimizing some things and cleaning spaghetti code.
 
-If you have a version of Ruby installed you can download the source and run it with
-`rake` or `rake start`  
-You can also run the main script directly from the bin folder but that may cause some issues.
-I'm planning to port this over to JRuby to get the use of real threads/fibers so if you want
-to use the future releases of this you may want to install JRuby or at least the JRE.
+If you have a version of Ruby installed you can download the source and run it with `rake` or `rake start`  
+You can also run the main script directly using `ruby bin/main` from the project folder.  
+You can also use the script as a command line tool! Run `ruby bin/main -h` for more usage info.
 
 #Example Images
 [img1_o]: https://github.com/ShadowfeindX/bitmap-encryptor/raw/master/tests/img1.bmp "Test Image 1 (Original)"

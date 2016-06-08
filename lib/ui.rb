@@ -1,97 +1,95 @@
 $: << 'lib'
-require 'bmp'
-require 'keygen'
+require 'BMP'
+require 'KEYGEN'
 
 class UI
     include KEYGEN
-
+    alias _0 make_key
+    alias _X exit
+    
     def initialize(scene)
-        system 'clear'
-        system 'cls'
+        system 'clear';system 'cls'
         print scene
-        start
-    end
-
-    def start
+        start_keygen
         loop do
-            image = nil
             print "Please enter a command: "
-            image = process(gets.chomp)
-            redo unless image
+            send(:"_#{gets.upcase[0]}") #rescue puts "That command was invalid!"
         end
     end
 
     def check_ext(name)
-        if name.rindex '.bmp' then name else name + '.bmp' end
-    end
-	
-    def process(cmd)
-        case cmd
-            when '1'
-                #~ gets filename and key from user
-                print "Please enter filename: "
-                filename = check_ext(gets.chomp)
-                print "Please enter CryptoKey: "
-                key = gets.chomp
-                
-                #~ checks validity of the given key
-                #~ restarts program if invalid
-                return nil unless check_key(key)
-                
-                #~ creates new encrypted image
-                print "Processing data...."
-                image = BMP::Encrypt.new filename
-                
-                #~ sends image information to be saved
-                save [image.export, 1, filename[0...filename.length-4]]		
-            when '2'
-                #~ gets filename and key from user
-                print "Please enter filename: "
-                filename = check_ext(gets.chomp)
-                print "Please enter CryptoKey: "
-                key = gets.chomp
-                
-                #~ checks validity of the given key
-                #~ restarts program if invalid
-                return nil unless check_key(key)
-                
-                #~ creates decrypted image from keyfile
-                print "Processing data...."
-                image = BMP::Decrypt.new filename
-                
-                #~ send image information to be saved
-                save [image.export,2,filename[0...filename.length-4]]
-            when 'A','a'
-                #~ generates a key from the KEYGEN module
-                make_key
-                #return nil
-            when 'X','x'
-                #~ sends to at_exit method
-                exit
-        else
-            puts "That command was invalid!"
-        end
-        
-        return nil
-    end       
-
-    def save(image)
-        print "saving image....."
-        case image[1]
-            when 1
-                image[0].save_as("#{image[2]}_enc.bmp")
-            when 2
-                image[0].save_as("#{image[2]}_dec.bmp")
-        else
-            puts "error!"
+        if name.include? '.bmp'
+            puts 'Please do not include file extensions!'
             return nil
         end
-        puts "saved!"
+        return name
     end
 	
-    at_exit do
-        system 'clear'
-        system 'cls'
-        puts "Thanks for using the Cryptomatic 9000!"
+    def single
+        print "Please enter Filename: "
+        filename = check_ext(gets.chomp)
+                
+        print "Please enter CryptoKey: "
+        key = check_key(gets.chomp)
+                
+        return nil unless key and filename
+        return filename
+    end
+    
+    def multi
+        print "Please enter Filenames: "
+        list = gets.chomp.split(' ')
+        
+        list.each {|name| return nil unless check_ext(name)}
+        
+        print "Please enter CryptoKey: "
+        key = check_key(gets.chomp)
+        return nil unless key
+        
+        return list
+    end
+    
+    def _1
+        image = single
+        print "Processing data..."
+        image = BMP::Encrypt.new image
+        print "encrypting data..."; image.encrypt
+        print "creating key..."; image.map
+        print "saving image....."; image.export
+        puts "saved!"
+    end
+    
+    def _2
+        image = single
+        print "Processing data..."
+        image = BMP::Decrypt.new image
+        print "processing key data..."; image.parse
+        print "decrypting data..."; image.decrypt
+        print "restoring image..."; image.export
+        puts "saved!"
+    end
+    
+    def _A
+        images = multi
+        images.each do |name|
+            print "Processing #{name}"
+            image = BMP::Encrypt.new name
+            print "encrypting #{name}..."; image.encrypt
+            print "creating key for #{name}..."; image.map
+            print   "saving #{name}....."; image.export
+            puts "#{name} was saved!"
+        end
+    end
+    
+    def _B
+        images = multi
+        images.each do |name|
+            print "Processing #{name}..."
+            image = BMP::Decrypt.new name
+            print "processing key #{name}..."; image.parse
+            print "decrypting #{name}..."; image.decrypt
+            print "restoring #{name}..."; image.export
+            puts "saved!"
+        end
     end
 end
